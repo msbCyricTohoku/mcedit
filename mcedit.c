@@ -611,7 +611,7 @@ void mceditDrawRows(struct abuf *ab) {
       if (cVar.Nrow == 0 && y == cVar.screenrows / 3) {
         char mssg[100];
         int mssglen =
-            snprintf(mssg, sizeof(mssg), "mcedit PHITS editor -- version %s",
+            snprintf(mssg, sizeof(mssg), "mcedit code editor -- version %s",
                      mceditFORT_VER);
         if (mssglen > cVar.screencols - linenum_width)
           mssglen = cVar.screencols - linenum_width;
