@@ -24,8 +24,6 @@
 
 struct mceditConfig cVar;
 
-/*** filetypes ***/
-
 /*
 struct mceditSyntax HLDB[] = {
     {"i", C_HL_extensions, C_HL_keywords, "#", "[",
