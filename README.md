@@ -10,11 +10,9 @@
 
 [ ABOUT ]
 A raw, lightweight, and efficient text editor for the console.
-
 Inspired by Kilo. Built for speed. No bloat.
 
 Supports syntax highlighting for:
-
 C/C++
 Python
 Fortran
@@ -25,9 +23,8 @@ $ make
 $ sudo make install
 
 [ USAGE ]
-Bash
 $ mcedit <filename>
-Plaintext
+
 +-----------+-----------------------+
 | COMMAND   | ACTION                |
 +-----------+-----------------------+
