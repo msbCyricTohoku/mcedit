@@ -32,11 +32,11 @@ struct mceditSyntax HLDB[] = {
 */
 struct mceditSyntax HLDB[] = {
     {"C/C++", C_HL_extensions, C_HL_keywords,
-     "//", // Single line comment
-     "/*", // You can add logic for this later if you expand syntax engine
+     "//", 
+     "/*", 
      HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS},
     {"Python", PY_HL_extensions, PY_HL_keywords, "#",
-     "'''", // Docstrings (treated as block comments often)
+     "'''", 
      HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS},
     {"Fortran", FORT_HL_extensions, FORT_HL_keywords, "!", NULL,
      HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS},
@@ -586,16 +586,15 @@ void mceditScroll() {
   }
 }
 
-// Draw rows with Line Numbers
 void mceditDrawRows(struct abuf *ab) {
   int y;
-  // Calculate width for line numbers (e.g., 4 spaces for 999 lines)
-  int linenum_width = 4; // Minimal fixed width
+ 
+  int linenum_width = 4;
 
   for (y = 0; y < cVar.screenrows; y++) {
     int filerow = y + cVar.rowoff;
 
-    // Draw line number gutter
+    //draw line number gutter
     if (filerow < cVar.Nrow) {
       char lnum[16];
       int lnumlen =
@@ -630,7 +629,7 @@ void mceditDrawRows(struct abuf *ab) {
       int len = cVar.row[filerow].rsize - cVar.coloff;
       if (len < 0)
         len = 0;
-      // Adjust width for line number column
+      // adjust width for line number column
       if (len > cVar.screencols - linenum_width)
         len = cVar.screencols - linenum_width;
 
@@ -672,7 +671,7 @@ void mceditscreenref() {
   mceditstatbardraw(&ab);
   mceditstatbarsetup(&ab);
   char buf[32];
-  // Adjust cursor position for line numbers
+  //adjust cursor pos
   snprintf(buf, sizeof(buf), "\x1b[%d;%dH", (cVar.cy - cVar.rowoff) + 1,
            (cVar.rx - cVar.coloff) + 1 + 4); // +4 for gutter
   abAppend(&ab, buf, strlen(buf));
@@ -772,7 +771,7 @@ void mceditFindCallback(char *query, int key) {
       last_match = current;
       cVar.cy = current;
       cVar.cx = mceditRowCxToRx(row, match - row->render);
-      cVar.rowoff = cVar.Nrow; // Scroll to force center
+      cVar.rowoff = cVar.Nrow;
 
       saved_hl_line = current;
       saved_hl = malloc(row->rsize);
@@ -788,7 +787,7 @@ void mceditFind() {
   int saved_cy = cVar.cy;
   int saved_coloff = cVar.coloff;
   int saved_rowoff = cVar.rowoff;
-  char *query = mceditPrompt("Search: %s (ESC to cancel, Arrows/Enter to next)",
+  char *query = mceditPrompt("Search: %s (ESC to cancel, Arrows (left/right) to next)",
                              mceditFindCallback);
   if (query) {
     free(query);
@@ -867,10 +866,10 @@ void mceditkeypress() {
   case CTRL_KEY('s'):
     mceditSave();
     break;
-  case CTRL_KEY('f'): // New Search Key
+  case CTRL_KEY('f'): //new search key
     mceditFind();
     break;
-  case CTRL_KEY('g'): // New GoTo Key
+  case CTRL_KEY('g'): //new GoTo
     mceditGoToLine();
     break;
   case HOME_KEY:

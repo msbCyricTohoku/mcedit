@@ -9,7 +9,7 @@ enum mceditfort_verHighlight {
   HL_KEYWORD2,
   HL_KEYWORD3,
   HL_NUMBER,
-  HL_MATCH // Added for search highlighting
+  HL_MATCH // for search highlighting
 };
 
 // data
