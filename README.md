@@ -6,7 +6,8 @@
  | |  | | |____ | |____ | |__| | _| |_    | |
  |_|  |_|\_____||______||_____/ |_____|   |_|
 
- :: MINIMALIST TERMINAL EDITOR v1.0 ::
+:: MINIMALIST TERMINAL EDITOR v1.0 ::
+
 [ ABOUT ]
 A raw, lightweight, and efficient text editor for the console.
 
@@ -14,18 +15,15 @@ Inspired by Kilo. Built for speed. No bloat.
 
 Supports syntax highlighting for:
 
-C / C++
-
+C/C++
 Python
-
 Fortran
-
 PHITS
 
 [ INSTALL ]
-Bash
 $ make
 $ sudo make install
+
 [ USAGE ]
 Bash
 $ mcedit <filename>
@@ -38,6 +36,8 @@ Plaintext
 | CTRL + F  | Find Text             |
 | CTRL + G  | Jump to Line          |
 +-----------+-----------------------+
+
 [ CREDITS ]
-Developed by msb.
+Developed by msb & Hiroshi Watabe.
+
 (c) 2022
